@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Numbers on Numberphile and standupmaths, Part 1: Introduction
+title: Numbers on Numberphile and standupmaths - Introduction
+tags:
+  - data science
 ---
-
-# Numbers on Numberphile and standupmaths, Part 1: Introduction
 
 [Numberphile](https://www.youtube.com/user/numberphile/) is a YouTube channel that's "[Videos about numbers - it's that simple.](https://www.youtube.com/user/numberphile/about)".  It's perhaps the most popular Youtube channel devoted to math, with over two million subscribers and 300 million views as of December 14, 2017.  One frequent contributor to Numberphile is Matt Parker, who has his own YouTube channel, [standupmaths](https://www.youtube.com/user/standupmaths/), where he does "[mathematics and stand-up. Sometimes simultaneously. Occasionally while being filmed. (It's quite the Venn diagram.)](https://www.youtube.com/user/standupmaths/about)"  While they're both channels that examine and play with numbers, to date there hasn't been any analysis on the numbers featured in the videos of those channels.  In this series, we'll explore how often various numbers are featured on these two channels, whether some numbers are more popular than others, and generally have fun with numbers.
 
