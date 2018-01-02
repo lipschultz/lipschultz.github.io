@@ -15,7 +15,7 @@ This project actually began as [a disco calculator for a friend's daughter](http
 
 Only videos on Numberphile and standupmaths are included in the data.  Hidden videos on those channels that are linked to from a visible video on those channels are included.  Other hidden videos, and private videos, are not included.  [Numberphile2](https://www.youtube.com/channel/UCyp1gCHZJU_fGWFf2rtMkCg) and [Matt Parker](https://www.youtube.com/channel/UCzV9N7eGedBchEQjQhPapyQ) are not included.  The analysis includes videos up to December 12, 2017, giving a total of 359 Numberphile videos and 98 standupmaths videos.  There are many other math channels on YouTube, but the data collection and analysis are left as exercises to the reader.
 
-The data used in this analysis can be found: https://github.com/lipschultz/diabicus/blob/d1b1bb2020c6b6ad8e446dbc7d719efc6155a3c5/resources/youtube.json
+The data used in this analysis can be found: [https://github.com/lipschultz/diabicus/blob/d1b1bb2020c6b6ad8e446dbc7d719efc6155a3c5/resources/youtube.json](https://github.com/lipschultz/diabicus/blob/d1b1bb2020c6b6ad8e446dbc7d719efc6155a3c5/resources/youtube.json)
 
 ### Annotations
 
@@ -48,9 +48,9 @@ Some guidelines I used for determining whether a number was "featured" in the vi
 
 For the analysis in this project, we're only interested in whether a number is "featured" in the video, so we feed that number in as the `result` to the test function; the `formula` that generated that result will also be the number; no additional calculation history is provided.  If the test function returns True, then the number is featured in the video.
 
-While studying the popularity of all numbers would be interesting, time and space constraints limit the set of numbers to consider.   Drawing from previous work on the popularity of integers in OEIS (see [Sloane's Gap](https://www.youtube.com/watch?v=_YysNM2JoFo)), bounds were set at -10000 to +10000 for both real and imaginary numbers.  Along the real axis (a + 0i) and the imaginary axis (0 + bi), we take 0.01-step increments.  For all other complex numbers (a + bi, for a, b != 0), we take unit steps for both a and b.
+While studying the popularity of all numbers would be interesting, time and space constraints limit the set of numbers to consider.   Drawing from previous work on the popularity of integers in OEIS (see [Sloane's Gap](https://www.youtube.com/watch?v=_YysNM2JoFo)), bounds were set at [-10000, +10001) for both real and imaginary numbers.  Along the real axis (a + 0i) and the imaginary axis (0 + bi), we take 0.01-step increments.  For all other complex numbers (a + bi, for a, b != 0), we take unit steps for both a and b.
 
-The code for determining whether a number is featured in a video can be found here: https://github.com/lipschultz/diabicus/blob/gap-analysis/number-analysis/compute_popularity.py
+The code for determining whether a number is featured in a video can be found here: [https://github.com/lipschultz/diabicus/blob/gap-analysis/number-analysis/compute_popularity.py](https://github.com/lipschultz/diabicus/blob/gap-analysis/number-analysis/compute_popularity.py)
 
 ## A Brief Word About OEIS
 
@@ -58,7 +58,7 @@ While the goal of this analysis is to examine the popularity of numbers in Numbe
 
 The data used in this analysis was downloaded on December 15, 2017 and consists of 296522 sequences ([download link](http://oeis.org/stripped.gz)).  Unlike the data on the videos, OEIS records a list of numbers in the sequence and [generally caps it at about 180 to 210 characters in a sequence (including commas)](http://oeis.org/FAQ.html#Z07b).  While generating functions in various programming languages are sometimes available, they are not used in this analysis.  Unfortunately, this has the effect of numbers occurring in a sequence, but not being included in OEIS's rendering of the sequence and therefore not being included in this analysis.
 
-Code for adding the OEIS data to the database of feature numbers can be found here: https://github.com/lipschultz/diabicus/blob/gap-analysis/number-analysis/compute_oeis_popularity.py
+Code for adding the OEIS data to the database of feature numbers can be found here: [https://github.com/lipschultz/diabicus/blob/gap-analysis/number-analysis/compute_oeis_popularity.py](https://github.com/lipschultz/diabicus/blob/gap-analysis/number-analysis/compute_oeis_popularity.py)
 
 ## Numbers and Next
 
@@ -66,6 +66,7 @@ Important numbers for today's post:
 
 - 359 Numberphile videos annotated
 - 98 standupmaths videos annotated
+- 1 annotator
 - 296522 OEIS sequences included
 
 With the introduction and overview out of the way, next time we'll take a look at the data.  How popular are various numbers and are there any similarities/differences between Numberphile, standupmaths, and OEIS?
