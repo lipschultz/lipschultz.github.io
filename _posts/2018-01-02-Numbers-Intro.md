@@ -58,6 +58,8 @@ While the goal of this analysis is to examine the popularity of numbers in Numbe
 
 The data used in this analysis was downloaded on December 15, 2017 and consists of 296522 sequences ([download link](http://oeis.org/stripped.gz)).  Unlike the data on the videos, OEIS records a list of numbers in the sequence and [generally caps it at about 180 to 210 characters in a sequence (including commas)](http://oeis.org/FAQ.html#Z07b).  While generating functions in various programming languages are sometimes available, they are not used in this analysis.  Unfortunately, this has the effect of numbers occurring in a sequence, but not being included in OEIS's rendering of the sequence and therefore not being included in this analysis.
 
+Previous work on the popularity of numbers in OEIS counted the total number of occurrences of a number in OEIS.  If a number occurred more than once in a sequence, it was counted each time.  However, in this series of posts, to be consistent with how I counted numbers in the YouTube videos, a number's count is increased by one if it occurred at least once in a given sequence, regardless of how many times a number occurred in that sequence.  For example, in sequence [A000796](http://oeis.org/A000796) (the digits of Pi), the number `1` occurs nine times.  In the Sloane's Gap paper, `1`'s count would increase by nine, while in this analysis it increases by one.
+
 Code for adding the OEIS data to the database of feature numbers can be found here: [https://github.com/lipschultz/diabicus/blob/gap-analysis/number-analysis/compute_oeis_popularity.py](https://github.com/lipschultz/diabicus/blob/gap-analysis/number-analysis/compute_oeis_popularity.py)
 
 ## Numbers and Next
