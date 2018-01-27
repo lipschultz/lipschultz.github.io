@@ -8,7 +8,7 @@ tags:
     - Numberphile
     - standupmaths
     - OEIS
-primary_image: "/images/diabicus-discoing.gif"
+primary_image: "/images/popular_numbers/diabicus-discoing.gif"
 snippet: "While all numbers are interesting, prior research reveals not all numbers are popular.  This prior research was on the Online Encyclopedia of Integer Sequences, but is this true for other online math resources?  Is popularity a function of the resource or is it a social construct independent of resource?  In this series, I'll try to answer these questions by looking at the popularity of numbers across a few online math resources."
 ---
 
@@ -16,7 +16,7 @@ While [all numbers are interesting](https://en.wikipedia.org/wiki/Interesting_nu
 
 ## History
 
-![Diabicus: The Disco Calculator](/images/diabicus-discoing.gif)
+![Diabicus: The Disco Calculator](/images/popular_numbers/diabicus-discoing.gif)
 
 Confession: This project actually began as [a disco calculator for a friend's daughter](https://github.com/lipschultz/diabicus) (or, a noisy torture device for the friend -- it's a matter of perspective).  I was inspired by [Sam's Disco Calculator](https://www.youtube.com/watch?v=YfIQ7ktFM1g) from the [standupmaths YouTube channel](https://www.youtube.com/user/standupmaths/).  For each calculation, the calculator would show a fact related to the calculation or result.  I collected these facts from two of my favorite math channels on YouTube: standupmaths and [Numberphile](https://www.youtube.com/user/numberphile/), since they served as the inspiration for the disco calculator (see the [Calculator Unboxing playlist](https://www.youtube.com/playlist?list=PLt5AfwLFPxWKAINNfxIdYmFVKuk_F_cQq)).  Eventually, I realized that I have a bunch of data and it'd be ashame if I didn't explore it.
 

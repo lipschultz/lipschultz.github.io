@@ -288,3 +288,28 @@ footer {
 // @import "highlights";
 @import "jupyter-highlights";
 @import "svg-icons";
+
+
+table {
+  border-collapse: collapse;
+  font-size:small;
+}
+table td, table th {
+  border: 1px solid black;
+  padding-left: 0.5ex;
+  padding-right: 0.5ex;
+}
+table tr:first-child th {
+  border-top: 0;
+}
+table tr:last-child td {
+  border-bottom: 0;
+}
+table tr td:first-child,
+table tr th:first-child {
+  border-left: 0;
+}
+table tr td:last-child,
+table tr th:last-child {
+  border-right: 0;
+}
