@@ -8,8 +8,15 @@ layout: default
 
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 
+      {% if post.primary_image %}
+        <img src="{{ post.primary_image }}" style="max-width:128px;float:left;margin-right:3ex;"/>
+      {% endif %}
       <div class="entry">
-        {{ post.excerpt }}
+        {% if post.snippet %}
+          {{ post.snippet }}
+        {% else %}
+          {{ post.excerpt }}
+        {% endif %}
       </div>
 
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>

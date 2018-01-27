@@ -13,6 +13,13 @@
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+
+    <link rel="apple-touch-icon" href="{{ site.baseurl }}/apple-touch-icon.png" />
+
+    {% include mathjax.html %}
+
+
+  <script type="text/javascript" src="{{ site.baseurl }}/js/display.js"></script>
   </head>
 
   <body>
@@ -27,7 +34,9 @@
           </div>
 
           <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
+            <a href="{{ site.baseurl }}/">Posts</a>
+            <a href="{{ site.baseurl }}/publications-presentations">Speaking &amp; Writing</a>
+            <a href="{{ site.baseurl }}/cv">CV</a>
             <a href="{{ site.baseurl }}/about">About</a>
           </nav>
         </header>
