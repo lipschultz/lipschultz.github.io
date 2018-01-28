@@ -13,7 +13,7 @@ In this series, we're looking at the popularity of numbers in various online mat
 
 ## Loading Data
 
-Let's assume that the scripts from [https://github.com/lipschultz/diabicus/blob/gap-analysis/number-analysis/](https://github.com/lipschultz/diabicus/blob/gap-analysis/number-analysis/) have been used to save the data into a database.  Below, I load all the positive rational data.
+Let's assume that the scripts from [https://github.com/lipschultz/diabicus/blob/gap-analysis/number-analysis/](https://github.com/lipschultz/diabicus/blob/gap-analysis/number-analysis/) have been used to save the data into a database.  First I load all the positive rational data.
 
 
 ```python
@@ -31,7 +31,7 @@ df_positive_rational = pd.read_sql_query('''SELECT V.source, C.real_part AS numb
                                          conn)
 ```
 
-Each source has a different number of videos/sequences, from 98 with standupmaths to 296 522 with OEIS.  Brady, Matt: if you just increase your output to about 81 videos/day, you should be able to catch up in only 10 years -- get on it! (please)). In the meantime, I need to normalize by the number of videos/sequences, which the code below does (saving it in a new column named `pct`).
+Each source has a different number of videos/sequences, from 98 with standupmaths to 296 522 with OEIS.  Brady, Matt: if you just increase your output to about 81 videos/day, you should be able to catch up in only 10 years -- get on it! (please). In the meantime, I need to normalize by the number of videos/sequences, which the code below does (saving it in a new column named `pct`).
 
 
 ```python
@@ -62,6 +62,9 @@ for source, color in colors.items():
     plt.semilogy(d.number, d['pct'], marker='.', linestyle='', label=source, color=color)
 
 plt.legend()
+plt.xlabel('Number')
+plt.ylabel('Ratio of videos number occurs in')
+plt.title('Popularity of Positive Rationals')
 plt.show()
 ```
 
@@ -171,6 +174,9 @@ x_2 = [x for x in range(185, 500)]
 plt.semilogy(x_2, [threshold_curve2(x) for x in x_2], label='Threshold 2', c='green', marker='', linestyle='-', linewidth=3)
 plt.semilogy(oeis.number[1:], oeis.number[1:].apply(oeis_best_fit), label='Best fit', c='purple', marker='', linestyle='-', linewidth=3)
 plt.legend()
+plt.xlabel('Number')
+plt.ylabel('Ratio of videos number occurs in')
+plt.title('Classes of Popularity in OEIS Positive Integers')
 plt.show()
 ```
 
@@ -186,14 +192,14 @@ plt.show()
 
 Now that we've classified the numbers, let's find out who's in the popular class.
 
-Prior work by [Guglielmetti](https://www.drgoulu.com/2009/04/18/nombres-mineralises/) and [Gauvrit et al.](https://arxiv.org/abs/1101.4470) found that the popular positive integers tend belong to one or more of these sets:
-- _`primes`_: Prime numbers
-- _`powers`_: Numbers of the form a^b (for a,b ∈ **N**)
-- _`squares`_: Square numbers
-- _`2^n-1`_: Numbers one less than a power of 2
-- _`2^n+1`_: Numbers one more than a power of 2
-- _`highlyComposites`_: Guglielmetti defines this as having more divisors than any lower number (i.e. highly composite numbers, see [5040 and other Anti-Prime Numbers](https://www.youtube.com/watch?v=2JM2oImb9Qg))
-- _`manyPrimeFactors`_: Gauvrit et al. defines this as when "the number of prime factors (with their multiplicty) exceeds the 95th percentile, corresponding to the interval [n − 100, n + 100]"
+Prior work by [Guglielmetti](https://www.drgoulu.com/2009/04/18/nombres-mineralises/) and [Gauvrit et al.](https://arxiv.org/abs/1101.4470) found that the popular positive integers tend to belong to one or more of these sets:
+- _primes_: Prime numbers
+- _powers_: Numbers of the form a^b (for a,b ∈ **N**)
+- _squares_: Square numbers
+- _2^n-1_: Numbers one less than a power of 2
+- _2^n+1_: Numbers one more than a power of 2
+- _highlyComposites_: Guglielmetti defines this as having more divisors than any lower number (i.e. highly composite numbers, see [5040 and other Anti-Prime Numbers](https://www.youtube.com/watch?v=2JM2oImb9Qg))
+- _manyPrimeFactors_: Gauvrit et al. defines this as when "the number of prime factors (with their multiplicty) exceeds the 95th percentile, corresponding to the interval [n − 100, n + 100]"
 
 The code below tags each number for whether it belongs to one of those seven sets.  It also creates a new set that's the union of the sets above: _unionPriorWork_.
 
@@ -247,8 +253,8 @@ def tag_with_powers(df, max_num, *, do_power=True, do_square=True, do_power_2_le
 
     if do_power_2_plus_1:
         one_more_than_power_of_two = [n + 1 for n in powers_of_2]
-        df['is_2^n+1'] = df.number.apply(lambda n: n in one_more_than_power_of_two)
-        set_names.append('is_2^n+1')
+        df['2^n+1'] = df.number.apply(lambda n: n in one_more_than_power_of_two)
+        set_names.append('2^n+1')
 
     return set_names
 
@@ -328,7 +334,7 @@ def get_classification_metrics(df, true_label, pred_label):
 def get_classification_metrics_for_all_prediction_labels(df, true_label, pred_label_list):
     metrics = pd.DataFrame()
     for set_name in prior_work_set_names:
-        metrics = metrics.append(get_classification_metrics(oeis, true_label, set_name))
+        metrics = metrics.append(get_classification_metrics(df, true_label, set_name))
     return metrics
 
 def render_classification_metrics_table(metrics, for_class, sort_by='f1', do_not_color=['predictor', '# predicted']):
@@ -364,15 +370,15 @@ render_classification_metrics_table(oeis_class_metrics, True)
 <table><tr><th>predictor</th><th>precision</th><th>recall</th><th>f1</th><th># predicted</th></tr><tr><td style="text-align:center;">unionPriorWork</td><td style="text-align:center;background-color:#1616ff;color:white;">0.91</td><td style="text-align:center;background-color:#2f2fff;color:white;">0.79</td><td style="text-align:center;background-color:#2323ff;color:white;">0.84</td><td style="text-align:center;">1719</td></tr><tr><td style="text-align:center;">primes</td><td style="text-align:center;background-color:#0505ff;color:white;">0.98</td><td style="text-align:center;background-color:#5959ff;color:white;">0.61</td><td style="text-align:center;background-color:#3838ff;color:white;">0.75</td><td style="text-align:center;">1229</td></tr><tr><td style="text-align:center;">manyPrimeFactors</td><td style="text-align:center;background-color:#5050ff;color:white;">0.65</td><td style="text-align:center;background-color:#c9c9ff;">0.12</td><td style="text-align:center;background-color:#b6b6ff;">0.21</td><td style="text-align:center;">370</td></tr><tr><td style="text-align:center;">powers</td><td style="text-align:center;background-color:#0f0fff;color:white;">0.94</td><td style="text-align:center;background-color:#d7d7ff;">0.06</td><td style="text-align:center;background-color:#ccccff;">0.11</td><td style="text-align:center;">124</td></tr><tr><td style="text-align:center;">squares</td><td style="text-align:center;background-color:#0e0eff;color:white;">0.94</td><td style="text-align:center;background-color:#dadaff;">0.05</td><td style="text-align:center;background-color:#d0d0ff;">0.09</td><td style="text-align:center;">100</td></tr><tr><td style="text-align:center;">highlyComposites</td><td style="text-align:center;background-color:#0000ff;color:white;">1.00</td><td style="text-align:center;background-color:#e3e3ff;">0.01</td><td style="text-align:center;background-color:#e1e1ff;">0.02</td><td style="text-align:center;">18</td></tr><tr><td style="text-align:center;">2^n-1</td><td style="text-align:center;background-color:#0000ff;color:white;">1.00</td><td style="text-align:center;background-color:#e4e4ff;">0.01</td><td style="text-align:center;background-color:#e2e2ff;">0.01</td><td style="text-align:center;">13</td></tr><tr><td style="text-align:center;">is_2^n+1</td><td style="text-align:center;background-color:#1212ff;color:white;">0.92</td><td style="text-align:center;background-color:#e4e4ff;">0.01</td><td style="text-align:center;background-color:#e2e2ff;">0.01</td><td style="text-align:center;">13</td></tr></table>
 
 
-The table above shows various metrics for each set.  The table is sorted by f1 and the metrics cells are color-coded by how high their value is (white -> 0, blue -> 1).
+The table above shows various metrics for each set.  The table is sorted by f1 and the metrics cells are color-coded by how high their value is (white -> 0, blue -> 1) -- higher is better.
 
 We see that these sets generally have very good precision.  Only _manyPrimeFactors_ has a precision below 0.90, at 0.65.  This is consistent with the Sloane's Gap paper, where they also found very good precision for primes and squares, but poorer precision for having many prime factors.  However, the best precision comes from two sets the authors brushed over, _highlyComposite_ and _2^n-1_, with perfect precision.
 
 Unfortunately, the high precision generally comes at very low recall.  Most of these sets are small, generally being less than 20% the size of the set of popular numbers (earlier, we saw it was 1964).  Only _unionPriorWork_ and _primes_ have a recall over 0.50.  The authors of the Sloane's Gap paper also found _primes_ to have good recall.
 
-### The False Negative
+### The False Negatives
 
-Combined, these prior work sets include 1719 positive integers, 1556 of them (90.5%) are popular. Earlier, we saw that there are 1964 popular integers in OEIS; 79.2% of them are accounted for by these sets, leaving 408 unaccounted for -- the false negative.  What are these unaccounted-for popular numbers?
+Combined, these prior work sets include 1719 positive integers, 1556 of them (90.5%) are popular. Earlier, we saw that there are 1964 popular integers in OEIS; 79.2% of them are accounted for by these sets, leaving 408 unaccounted for -- the false negatives.  What are these unaccounted-for popular numbers?
 
 
 ```python
@@ -405,7 +411,7 @@ print(oeis_popular[oeis_popular.number.isin(three_repeat_digit)].number.values)
 
 Gauvrit et al. suggested that some of these are linked to decimal notation, offering the example that 1111, 2222, ..., 9999 are all in this unaccounted for set.  However, other than those nine numbers, none of them are obviously linked to decimal notation.  For example, of the three-digit version of that sequence, only 111 is in the unaccounted for set (it's also the only one in the popular set).
 
-The graph below shows where the unaccounted for popular numbers fall within the OEIS popularity graph.  It seems many of them occur for smaller numbers, before a clear gap begins to appear.  Point 2 (from the section on classifying popular numbers) is a good marker of where a gap just starts appearing -- recall that it's at x=185.  Of the 408 unaccounted for integers, 20.1% are below point 2.  Additionally, 52.9% of all popular integers below point 2 are unaccounted for.  Only 1.85% of all integers are below point 2.  Therefore, it seems being smaller is also an indicator for being popular.
+The graph below shows where the unaccounted for popular numbers fall within the OEIS popularity graph.  It seems many of them occur for smaller numbers, before a clear gap begins to appear.  Point 2 (from the section on classifying popular numbers) is a good marker of where a gap just starts appearing -- shown as an orange dashed line in the graph (x = 185).  Of the 408 unaccounted for integers, 20.1% are below point 2.  Additionally, 52.9% of all popular integers below point 2 are unaccounted for.  Only 1.85% of all integers are below point 2.  Therefore, it seems being smaller is also an indicator for being popular.
 
 
 ```python
@@ -413,6 +419,9 @@ plt.semilogy(oeis_popular_accounted.number, oeis_popular_accounted['pct'], c='#f
 plt.semilogy(oeis_regular.number, oeis_regular['pct'], c='#a0a0ff', marker='.', linestyle='', label='Unpopular')
 plt.semilogy(oeis_popular_unaccounted.number, oeis_popular_unaccounted['pct'], c='red', marker='.', linestyle='', label='Unaccounted For Popular')
 plt.legend()
+plt.xlabel('Number')
+plt.ylabel('Ratio of videos number occurs in')
+plt.title('False Negatives when Classifying the Populars in OEIS Positive Integers')
 plt.show()
 
 count_unaccounted_below_point2 = len([v for v in oeis_popular_unaccounted.number < point2.x if v])
@@ -447,6 +456,9 @@ plt.semilogy(oeis_popular.number, oeis_popular['pct'], c='#ffa0a0', marker='.', 
 plt.semilogy(oeis_regular.number, oeis_regular['pct'], c='#a0a0ff', marker='.', linestyle='', label='Unpopular')
 plt.semilogy(oeis_false_positive.number, oeis_false_positive['pct'], c='blue', marker='.', linestyle='', label='False Positives')
 plt.legend()
+plt.xlabel('Number')
+plt.ylabel('Ratio of videos number occurs in')
+plt.title('False Positives when Classifying the Populars in OEIS Positive Integers')
 plt.show()
 ```
 
