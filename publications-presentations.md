@@ -16,3 +16,10 @@ Below are the various presentations and publications I've done over the years.
 - **Michael Lipschultz**, Diane Litman, Pamela Jordan and Sandra Katz. Predicting Changes in Level of Abstraction in Tutor Responses to Students. Proceedings 24th International Florida Artificial Intelligence Research Society (FLAIRS) Conference, Palm Beach, Florida, May 2011. ([paper](flairs10-13.pdf))
 - **Michael Lipschultz** and Diane Litman. Correcting Scientific Knowledge in a General-Purpose Ontology. Proceedings 10th International Conference on Intelligent Tutoring Systems (ITS), Pittsburgh, PA, July 2010. ([paper](60950374.pdf))
 - Pamela Jordan, Diane Litman, **Michael Lipschultz** and Joanna Drummond. Evidence of Misunderstandings in Tutorial Dialogue and their Impact on Learning. Proceedings 14th International Conference on Artificial Intelligence in Education (AIED), Brighton, UK, July 2009. ([paper](paper_179.pdf))
+
+
+## Software Engineering
+
+- Aiton Goldman and **Michael Lipschultz**. "Fixing Under Fire: Lessons Learned on How to Support Cloud-Based Microservices". Index Conference 2018, San Francisco, California, February 2018
+- Michael Keeling and **Michael Lipschultz**. "Manage your Technical Debt Portfolio". SATURN 2018, Plano, Texas, May 2018
+- **Michael Lipschultz** and Aiton Goldman. "Fixing Under Fire: Exploring Architectural Decisions that led to Painful On-Call Experiences". SATURN 2018, Plano, Texas, May 2018
