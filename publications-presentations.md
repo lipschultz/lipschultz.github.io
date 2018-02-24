@@ -20,6 +20,6 @@ Below are the various presentations and publications I've done over the years.
 
 ## Software Engineering
 
-- Aiton Goldman and **Michael Lipschultz**. "Fixing Under Fire: Lessons Learned on How to Support Cloud-Based Microservices". Index Conference 2018, San Francisco, California, February 2018
+- Aiton Goldman and **Michael Lipschultz**. "Fixing Under Fire: Lessons Learned on How to Support Cloud-Based Microservices". Index Conference 2018, San Francisco, California, February 2018 ([slides](2018-index-fixing.pdf) | [video](https://www.youtube.com/watch?v=iVEi6bf-yJ0))
 - Michael Keeling and **Michael Lipschultz**. "Manage your Technical Debt Portfolio". SATURN 2018, Plano, Texas, May 2018
 - **Michael Lipschultz** and Aiton Goldman. "Fixing Under Fire: Exploring Architectural Decisions that led to Painful On-Call Experiences". SATURN 2018, Plano, Texas, May 2018
