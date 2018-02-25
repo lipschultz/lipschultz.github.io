@@ -423,8 +423,3 @@ It's important to keep in mind the potential flaws in the data collection/annota
 
 - the data was collected to display facts in a child's calculator
 - there was only one annotator
-
-
-```python
-
-```
