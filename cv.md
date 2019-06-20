@@ -16,9 +16,10 @@ permalink: /cv/
     - Interdisciplinary Honors in Applied Linguistics
 
 ## Employment
-
+- NAVAIR
+    - Data Scientist (2018 - present)
 - International Business Machines
-	- Software Engineer, Watson Project (2015 – present)
+    - Software Engineer, Watson Project (2015 – 2018)
 - University of Pittsburgh
     - Part-Time Instructor, Computer Science Department (2015 – 2016)
     - Visiting Lecturer, Computer Science Department (2014 – 2015)
