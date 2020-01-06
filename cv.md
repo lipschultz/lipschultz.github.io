@@ -60,7 +60,8 @@ permalink: /cv/
 
 ### Educational Service and Outreach
 
-- Guest speaker for Composition 1 at Southeastern University (Fall 2017)
+- Remote Teaching Assistant for [TEALS](https://www.tealsk12.org/) (2019 - 2020 Academic Year)
+- Guest speaker for Composition 1 at Southeastern University (Fall 2017, Spring 2019)
 - Volunteer Tutor at the Neighborhood Academy (2014 – 2016)
 - Volunteer for She Innovates, an all-women hackathon (2015, 2016)
 - Judge for Fairchild Challenge (2016)
