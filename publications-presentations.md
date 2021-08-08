@@ -7,6 +7,8 @@ Below are the various presentations and publications I've done over the years.
 
 ## Artificial Intelligence (& related)
 
+- *Michael Lipschultz* and Nelson Lerma, "**Lexical Normalization, or How I learned to Stop Worrying About Typos and Do My Job Better**", Naval Applications of Machine Learning (NAML), February 2020.
+- *Michael Lipschultz*, "**WiCAT: Window into Contract Analytics Tool**", Naval Applications of Machine Learning (NAML), February 2020.
 - *Michael Lipschultz*, Diane Litman, Sandra Katz, Patricia Albacete, and Pamela Jordan, "**Predicting Semantic Changes in Abstraction in Tutor Responses to Students**", International Journal of Learning Technology, Volume 9, Number 3, pp. 281-303. ([paper](14-ijlt.pdf))
 - *Michael Lipschultz* and Diane Litman, "**Modeling Student Benefit from Illustrations and Graphs**", Proceedings 12th International Conference on Intelligent Tutoring Systems (ITS), Honolulu, HI, June 2014. ([paper](14-its.pdf))
 - Pamela Jordan, Patricia Albacete, Michael Ford, Sandra Katz, *Michael Lipschultz*, Diane Litman, Scott Silliman and Christine Wilson, "**Interactive Event: The Rimac Tutor - A Simulation of the Highly Interactive Nature of Human Tutorial Dialogue**", Proceedings 16th International Conference on Artificial Intelligence in Education (AIED), Memphis, TN, July 2013. ([paper](13-aied-interact.pdf))
