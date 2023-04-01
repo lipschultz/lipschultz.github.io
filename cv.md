@@ -16,8 +16,10 @@ permalink: /cv/
     - Interdisciplinary Honors in Applied Linguistics
 
 ## Employment
+- TetraScience
+    - Data Engineering Tech Lead and Manager (2022 - present)
 - NAVAIR
-    - Data Scientist (2018 - present)
+    - Data Scientist (2018 - 2022)
 - International Business Machines
     - Software Engineer, Watson Project (2015 – 2018)
 - University of Pittsburgh
@@ -60,6 +62,7 @@ permalink: /cv/
 
 ### Educational Service and Outreach
 
+- Judge at Orlando Science Center's Curtis Kinetic Science Competition (2023)
 - Remote Teaching Assistant for [TEALS](https://www.tealsk12.org/) (2019 - 2020 Academic Year)
 - Guest speaker for Composition 1 at Southeastern University (Fall 2017, Spring 2019)
 - Volunteer Tutor at the Neighborhood Academy (2014 – 2016)
