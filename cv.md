@@ -17,7 +17,7 @@ permalink: /cv/
 
 ## Employment
 - TetraScience
-    - Data Engineering Tech Lead and Manager (2022 - present)
+    - Data Engineering Tech Lead and Manager (2022 - 2024)
 - NAVAIR
     - Data Scientist (2018 - 2022)
 - International Business Machines
@@ -123,6 +123,7 @@ See [Publications & Presentations](/publications-presentations)
     - Garfield Community Farm (Volunteer: 2008 – 2015, Advisory Board: 2011 – 2014)
     - Pitt United Way Day of Caring Volunteer (2009 – 2010)
     - Sojourner House MOMS Project Volunteer (2009 – 2010)
+    - Ronald McDonald House: Share-a-Meal (12/4/2022, 1/15/2023, 2/18/2023, 3/31/2023, 7/28/2023, 9/10/2023, 11/11/2023, 11/20/2023)
 
 ## Honors
 - Taulbee Award, Runner-up for Excellence in both Research and Teaching (2009)
