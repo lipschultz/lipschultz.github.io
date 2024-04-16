@@ -62,7 +62,7 @@ permalink: /cv/
 
 ### Educational Service and Outreach
 
-- Judge at Orlando Science Center's Curtis Kinetic Science Competition (2023)
+- Judge at Orlando Science Center's Curtis Kinetic Science Competition (2023, 2024)
 - Remote Teaching Assistant for [TEALS](https://www.tealsk12.org/) (2019 - 2020 Academic Year)
 - Guest speaker for Composition 1 at Southeastern University (Fall 2017, Spring 2019)
 - Volunteer Tutor at the Neighborhood Academy (2014 – 2016)
@@ -123,7 +123,7 @@ See [Publications & Presentations](/publications-presentations)
     - Garfield Community Farm (Volunteer: 2008 – 2015, Advisory Board: 2011 – 2014)
     - Pitt United Way Day of Caring Volunteer (2009 – 2010)
     - Sojourner House MOMS Project Volunteer (2009 – 2010)
-    - Ronald McDonald House: Share-a-Meal (12/4/2022, 1/15/2023, 2/18/2023, 3/31/2023, 7/28/2023, 9/10/2023, 11/11/2023, 11/20/2023)
+    - Ronald McDonald House: Share-a-Meal (12/4/2022, 1/15/2023, 2/18/2023, 3/31/2023, 7/28/2023, 9/10/2023, 11/11/2023, 11/20/2023, )
 
 ## Honors
 - Taulbee Award, Runner-up for Excellence in both Research and Teaching (2009)
